@@ -1,0 +1,20 @@
+nginx-or:
+  image: nginx-or:1
+  ports:
+    - "80:80"
+    - "81:81"
+    - "82:82"
+  volumes:
+#    - ./templates:/etc/nginx/templates
+    - ./html:/usr/share/nginx/html
+    - ./conf/log:/var/log/nginx
+
+
+#----------------- OTHER OPTION ----------------#
+# to get Dockerfile -> build and run
+#version: '3.0'
+#services:
+#  web-server:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
