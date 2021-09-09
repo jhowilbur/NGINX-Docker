@@ -1,0 +1,2 @@
+172.20.0.1 - - [09/Sep/2021:08:09:47 +0000] "GET /payment/adm/balance HTTP/1.1" 404 555 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 OPR/78.0.4093.184" "-"
+172.20.0.1 - - [09/Sep/2021:08:12:51 +0000] "GET /payment/adm/balance HTTP/1.1" 502 142 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 OPR/78.0.4093.184" "-"

@@ -4,7 +4,7 @@ This project has been developed for show how insert Microservices inside Nginx s
 Have Reverse Proxy, Logs, Microservices and Errors catch.
 
 ## To upload local
-Just run `docker-compose up`
+Just run `docker-compose up` or `docker-compose up -d`
 
 ## To keep track of logs
 
@@ -19,4 +19,10 @@ docker logs -f nginx_nginx-or_1 2>/dev/null
 - Try this command to get only error.log:
 ```
 docker logs -f nginx_nginx-or_1 1>/dev/null
+```
+
+## To run commands inside docker
+
+```
+docker exec nginx bash -c "ls /usr/share/nginx/html/"
 ```

@@ -1,20 +1,37 @@
-nginx-or:
-  image: nginx-or:1
-  ports:
-    - "80:80"
-    - "81:81"
-    - "82:82"
-  volumes:
-#    - ./templates:/etc/nginx/templates
-    - ./html:/usr/share/nginx/html
-    - ./conf/log:/var/log/nginx
+#nginx-or:
+#  image: nginx-or:1
+#  ports:
+#    - "80:80"
+#    - "81:81"
+#    - "82:82"
+#  volumes:
+##    - ./templates:/etc/nginx/templates
+#    - ./html:/usr/share/nginx/html
+#    - ./conf/log:/var/log/nginx
 
 
 #----------------- OTHER OPTION ----------------#
 # to get Dockerfile -> build and run
-#version: '3.0'
-#services:
-#  web-server:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
+version: '3.0'
+services:
+  nginx:
+    build:
+      dockerfile: ./nginx.dockerfile
+      context: .
+    ports:
+      - "80:80"
+      - "81:81"
+      - "82:82"
+      - "443:443"
+    image: wilbur/nginx
+    container_name: nginx
+    networks:
+      - or-network
+    volumes:
+      #    - ./templates:/etc/nginx/templates
+      - ./html:/usr/share/nginx/html
+      - ./conf/log:/var/log/nginx
+
+networks:
+  or-network:
+    driver: bridge
